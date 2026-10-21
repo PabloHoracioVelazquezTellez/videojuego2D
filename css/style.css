@@ -1,0 +1,162 @@
+
+/* Configuración general */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #080d16;
+    color: #eaf2ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(135deg, #101d30, #0b1220);
+    border-bottom: 1px solid #263b50;
+}
+
+.titulo {
+    margin: 0;
+    color: #63ffd2;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    letter-spacing: 0.3rem;
+    text-shadow: 0 0 18px #1cae91;
+}
+
+.subtitulo {
+    margin: 0.5rem 0 0;
+    color: #a8bed2;
+}
+
+/* Tarjetas de información */
+.panel-info {
+    height: 100%;
+    padding: 0.8rem;
+    background: #111b2a;
+    border: 1px solid #293c50;
+    border-radius: 10px;
+}
+
+.panel-info span {
+    color: #9eb4c9;
+    font-size: 0.9rem;
+}
+
+.panel-info h3 {
+    margin: 0.4rem 0 0;
+    color: #63ffd2;
+    font-weight: bold;
+}
+
+/* Instrucciones */
+.instrucciones {
+    padding: 0.9rem 1rem;
+    background: #101b29;
+    border-left: 4px solid #63ffd2;
+    border-radius: 5px;
+    color: #d8e5f2;
+}
+
+/* Canvas */
+.game-container {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #36536b;
+    border-radius: 10px;
+    background: #050a12;
+    box-shadow: 0 0 25px #0008;
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #080f1b;
+    cursor: crosshair;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 1rem;
+    background: #0c1420;
+    border-top: 1px solid #263b50;
+    color: #9eb4c9;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 576px) {
+    .panel-info {
+        padding: 0.6rem;
+    }
+
+    .panel-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .instrucciones {
+        font-size: 0.9rem;
+    }
+}
+.music-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+
+#musicButton {
+    padding: 9px 16px;
+    color: #ffffff;
+    background: #512b81;
+    border: 1px solid #a855f7;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#musicButton:hover {
+    background: #6d35a8;
+}
+
+#musicVolume {
+    accent-color: #a855f7;
+    cursor: pointer;
+}
+
+/* Puntero personalizado dentro del área de juego */
+#gameCanvas {
+    cursor: none;
+}
+
+/* Etiqueta matemática que sigue al mouse */
+.math-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    padding: 5px 10px;
+    border: 1px solid #63ffd2;
+    border-radius: 8px;
+
+    background: rgba(23, 35, 42, 0.95);
+    color: #63ffd2;
+
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    font-weight: bold;
+
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+
+    box-shadow: 0 0 10px rgba(99, 255, 210, 0.3);
+    white-space: nowrap;
+
+    transform: translate(18px, 18px);
+    display: none;
+}

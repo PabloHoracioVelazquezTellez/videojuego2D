@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mathack | Graficación 2D</title>
+
+    <!-- Bootstrap para organizar la interfaz -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Estilos propios del videojuego -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<link rel="icon" type="image/png" href="assets/sprites/calabaza.png">
+<body>
+    <div id="mathCursor" class="math-cursor">f(x)</div>
+    <header class="container-fluid py-3">
+        <div class="container text-center">
+            <h1 class="titulo">MATHACK</h1>
+            <p class="subtitulo">
+                Sobrevive al caos del plano cartesiano
+            </p>
+        </div>
+    </header>
+
+    <main class="container pb-4">
+
+        <!-- Información de la partida -->
+        <section class="row g-3 mb-3 text-center">
+
+            <div class="col-6 col-md-3">
+                <div class="panel-info">
+                    <span>Puntuación</span>
+                    <h3 id="score">0</h3>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="panel-info">
+                    <span>Objetos activos</span>
+                    <h3 id="objectCount">0 / 25</h3>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="panel-info">
+                    <span>Colisiones</span>
+                    <h3 id="collisionCount">0</h3>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="panel-info">
+                    <span>Estado</span>
+                    <h3 id="gameStatus">Listo</h3>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Instrucciones breves -->
+        <section class="instrucciones mb-3">
+            <strong>Cómo jugar:</strong>
+            haz clic en los objetos matemáticos para capturarlos.
+            Observa sus ecuaciones, trayectorias y colisiones.
+        </section>
+
+        <!-- Área principal del videojuego -->
+        <section class="game-container">
+            <canvas
+                id="gameCanvas"
+                width="1000"
+                height="600"
+                aria-label="Videojuego Mathack sobre un plano cartesiano"
+            >
+                Tu navegador no admite Canvas.
+            </canvas>
+        </section>
+
+        <!-- Controles -->
+        <section class="text-center mt-3">
+            <button id="startButton" class="btn btn-success">
+                Iniciar juego
+            </button>
+
+            <button id="resetButton" class="btn btn-outline-light">
+                Reiniciar
+            </button>
+        </section>
+        
+        <div class="music-controls">
+            <button id="musicButton" type="button">
+                🎵 Activar música
+            </button>
+
+            <label for="musicVolume">Volumen</label>
+
+            <input
+                type="range"
+                id="musicVolume"
+                min="0"
+                max="100"
+                value="30"
+            >
+        </div>
+
+        <audio id="backgroundMusic" loop preload="auto">
+            <source src="assets/audio/musica.mp3" type="audio/mpeg">
+            Tu navegador no admite audio HTML5.
+        </audio>
+
+
+    </main>
+
+    <footer class="container-fluid text-center py-3">
+        <p class="mb-1">
+            Mathack | Proyecto de Graficación
+        </p>
+        <small>
+            Ingeniería en Sistemas Computacionales
+            · Instituto Tecnológico de Pachuca
+            . Pablo Horacio Velazquez Tellez 24200102
+        </small>
+    </footer>
+
+    <!-- Lógica principal -->
+    
+    <script src="js/gameObject.js"></script>
+    <script src="js/main.js"></script>
+    
+    
+
+</body>
+</html>
